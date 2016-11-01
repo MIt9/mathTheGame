@@ -3,12 +3,15 @@
  */
 import React, { PropTypes } from 'react';
 import {} from './style.less';
+import LANGUAGE from '../../language/language.js';
+const L = LANGUAGE[localStorage.lng];
 const PROMPTS = {
-    0: "start",
-    1: "Right answer !!!",
-    2: "Congratulation",
-    3: "Game over"
+    0: "START",
+    1: "RIGHT_ANSWER",
+    2: "CONGRATULATION",
+    3: "GAME_OVER"
 };
+
 let AnswerPrompt = React.createClass({
         _click(){
             let {prompt, action} = this.props;
@@ -20,7 +23,7 @@ let AnswerPrompt = React.createClass({
         render() {
             return (
                 <div className="answerPrompt" onClick={this._click}>
-                    {PROMPTS[this.props.prompt]}
+                    {L[PROMPTS[this.props.prompt]]}
                 </div>
             )
         }

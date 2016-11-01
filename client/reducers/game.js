@@ -88,7 +88,7 @@ function _startLevel(levelArray, select){
 function _generateAnswer(answer){
     const result = [answer];
     for (var i = 0; i < 3; i++) {
-        result.push(getRandomIntWithoutNum(0, 9, result))
+        result.push(getRandomIntWithoutNum(0, 10, result))
     }
     return result.shuffle();
 }

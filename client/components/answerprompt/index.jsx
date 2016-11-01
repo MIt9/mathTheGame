@@ -4,7 +4,6 @@
 import React, { PropTypes } from 'react';
 import {} from './style.less';
 import LANGUAGE from '../../language/language.js';
-const L = LANGUAGE[localStorage.lng];
 const PROMPTS = {
     0: "START",
     1: "RIGHT_ANSWER",
@@ -21,6 +20,7 @@ let AnswerPrompt = React.createClass({
         },
 
         render() {
+            const L = LANGUAGE[localStorage.lng];
             return (
                 <div className="answerPrompt" onClick={this._click}>
                     {L[PROMPTS[this.props.prompt]]}

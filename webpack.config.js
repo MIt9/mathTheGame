@@ -10,6 +10,7 @@ const config = {
   ],
   output: {
     path: __dirname+'/cordova/www',
+    publicPath: "/assets/",
     filename: 'bundle.js'
   },
   watch:true,
@@ -28,7 +29,11 @@ const config = {
     },{
       test: /\.svg$/,
       loader: 'babel?presets[]=es2015,presets[]=react!svg-react'
-    }]
+    },{
+      test: /\.(png|mp3|ogg|woff)$/,
+      loader: 'file?name=[path][name].[ext]'
+    }
+    ]
   },
   devtool: "eval",
   plugins: [

@@ -63,6 +63,10 @@ export default function game (state = initialState, action = {}) {
             }
             return state;
             break;
+        case 'REST_LEVEL':
+            return { ...state, currentVal:0, currentLevel:0};
+            break;
+
         case 'SET_ANSWER':
             let tmpResult = (state.model[0] + state.model[2]) === action.answer;
             return { ...state,

@@ -12,26 +12,70 @@ import { bindActionCreators } from 'redux';
 import * as gameActions from '../../actions/GameActions';
 
 let Game = React.createClass({
-
+    getInitialState(){
+        return {
+            playSound: null
+        }
+    },
     componentDidMount(){
-        const levelArray = this.props.gameActions.setExamplesArray(this.props.levels.levelsArray[this.props.params.level]);
+        this.props.gameActions.setExamplesArray(this.props.levels.levelsArray[this.props.params.level]);
+    },
+    componentWillUnmount(){
+        this.props.gameActions.restLevel();
+    },
+    componentWillReceiveProps(nextProps) {
+        const newPrompt = nextProps.game.prompt;
+        const newLives = nextProps.game.lives;
+        if (newPrompt !== this.props.game.prompt) {
+            if(newPrompt !== 0){
+                const sound = {
+                  1:'congratulation',
+                    2:'congratulation',
+                    3:'loss'
+                };
+                this._buttonPress(
+                    null,sound[newPrompt]
+                )
+            }
+        }else if (newLives !== this.props.game.lives) {
+            this._buttonPress(
+                null,'mistake'
+            )
+        }
     },
     _promptClick(prompt){
-        console.log(prompt);
-        switch (prompt){
-            case 1:
-                this.props.gameActions.nextExample();
-                break;
-            case 2:
-                hashHistory.push("/levels");
-                break;
-            case 3:
-                hashHistory.push("/levels");
-                break;
-
-
-        }
-
+        this._buttonPress(
+            ()=>{
+                console.log(prompt);
+                switch (prompt){
+                    case 1:
+                        this.props.gameActions.nextExample();
+                        break;
+                    case 2:
+                        hashHistory.push("/levels/complete/"+this.props.params.level);
+                        break;
+                    case 3:
+                        hashHistory.push("/levels");
+                        break;
+                }
+            }
+        )
+    },
+    _buttonPress(callback, soundId = 'button', hold = 300){
+        this.setState({playSound: soundId});
+        setTimeout(()=>{
+            this.setState({playSound: null});
+            if(typeof callback === 'function'){
+                callback();
+            }
+        }, hold);
+    },
+    _setCurrentValue(value){
+        this._buttonPress(
+            ()=>{
+                this.props.gameActions.setCurrentVal(value)
+            },'bubble'
+        )
     },
     render() {
         const {prompt,levelArray, allLevels, currentLevel, lives, options} = this.props.game;
@@ -44,16 +88,15 @@ let Game = React.createClass({
                 <div className="game">
                     <div className="wrapper">
                         <LevelLine all={allLevels} count={currentLevel}/>
-                        <Border example={levelArray[currentLevel]} action={actions.getCurrentVal}/>
+                        <Border example={levelArray[currentLevel]} action={this._setCurrentValue}/>
                         {prompt !== 0 ? <AnswerPrompt prompt={prompt} action={this._promptClick}/> : <Options optionArray={options} action={actions.pressOption}/>}
-                        <Barmenu showLives={true} lives={lives}/>
+                        <Barmenu playSound={this.state.playSound} showLives={true} lives={lives}/>
                     </div>
                 </div>
             </div>
         )
     }
 });
-export default Game;
 
 function mapStateToProps (state) {
     return {

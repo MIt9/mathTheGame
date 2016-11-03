@@ -1,4 +1,4 @@
-if (!localStorage.lng){localStorage.lng = "en"}
+if (!localStorage.lng){localStorage.setItem('lng', "en")}
 
 import React from 'react';
 import { render } from 'react-dom';
@@ -28,7 +28,7 @@ render(
     <Provider store={store}>
         <Router history={hashHistory}>
             <Route path="/" component={Home}/>
-            <Route path="/levels" component={Levels}/>
+            <Route path="/levels(/:status/:levelNumber)" component={Levels}/>
             <Route path="/game/:level" component={Game}/>
         </Router>
     </Provider>, document.getElementById('app'));

@@ -9,6 +9,11 @@ import LiveLine from '../liveline/index.jsx';
 import {} from './style.less';
 const AUDIO = {
     'backSound':'audio/lezaarth_drum.mp3',
+    'congratulation':'audio/congratulation.mp3',
+    'loss':'audio/loss.mp3',
+    'mistake':'audio/mistake.mp3',
+    'button':'audio/button.mp3',
+    'bubble':'audio/bubble.mp3'
 };
 const soundManager = SM.soundManager;
 
@@ -16,13 +21,30 @@ let Barmenu = React.createClass({
     getInitialState(){
         return {
             //нажата или ненажата кнопка
-            sound: true
+            sound: false,
+            playSound: null
         }
     },
 
-    componentDidMount(){
+    componentWillMount(){
+        if (localStorage.sound === undefined){localStorage.setItem('sound', "true")}
+        this.setState({
+            sound: localStorage.sound === "true"
+        });
         soundManager.setup({onready: this._loadSoundLibery});
-
+    },
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.playSound !== this.state.playSound) {
+            this._playSound(nextProps.playSound)
+        }
+    },
+    _playSound(soundName){
+        if(soundName && this.state.sound){
+            soundManager.play(soundName, {volume:100});
+            this.setState({ playSound: null });
+        }else{
+            this.setState({ playSound: null });
+        }
     },
     _loadSoundLibery(){
         for(let ID in AUDIO){
@@ -33,18 +55,20 @@ let Barmenu = React.createClass({
         }
     },
     _playBackgroundSound(){
-        soundManager.play('backSound',{loops:100});
+        soundManager.play('backSound',{loops:100, volume:20});
     },
     _soundTrigger(){
         const soundOn = !this.state.sound;
         this.setState({
             sound: soundOn
         });
+        localStorage.setItem('sound', soundOn);
         if(soundOn){
             this._playBackgroundSound();
         }else{
             soundManager.stopAll();
         }
+        this._playSound('button');
     },
     _exitGame(){
         let hash = window.location.hash.split('?')[0];
@@ -54,12 +78,12 @@ let Barmenu = React.createClass({
             'game': '/levels',
             'levels': '/'
         };
+        this._playSound('button');
         if (rout[hash]) {
             hashHistory.push(rout[hash]);
         } else {
             console.log('exit');
         }
-        console.log(hash);
     },
     render() {
         const soundClass = this.state.sound ? "soundSwitch" : "soundSwitch off";

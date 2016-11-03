@@ -3,6 +3,7 @@
  */
 const initialState = {
     levelsArray:[],
+    newGame:true,
     completeLevel:0,
     continue: false
 };
@@ -13,18 +14,16 @@ export default function levels (state = initialState, action = {}) {
             if (state.continue){
                 return state;
             }
-            return { ...state, levelsArray: newList() };
+            return { ...state, levelsArray: newList(), newGame:false };
         break;
         case 'NEXT':
-        {
-            const { failed, list, completed, model, fileName} = _setNext(state.list, state.failed, state.result, state.startLength);
-
-            return {...state, result: null, answer: null, list, failed, model, completed, fileName};
+        if(action.levelNumber == state.completeLevel){
+            return {...state, completeLevel: state.completeLevel+1};
+        }else{
+            return state;
         }
             break;
-        case 'CHECK_ANSWER':
-            return { ...state, result: action.result};
-        break;
+
         default :
             return state;
     }

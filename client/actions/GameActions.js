@@ -9,7 +9,12 @@ export function nextExample(  ) {
         type: 'NEXT_EXAMPLE'
     }
 }
-export function getCurrentVal(value){
+export function restLevel(  ) {
+    return {
+        type: 'REST_LEVEL'
+    }
+}
+export function setCurrentVal(value){
     return {
         type: 'CURRENT_VALUE',
         value

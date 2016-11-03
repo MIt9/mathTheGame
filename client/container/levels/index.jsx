@@ -10,12 +10,36 @@ import * as levelsActions from '../../actions/LevelsActions';
 
 
 let Levels = React.createClass({
+    getInitialState(){
+        return {
+            playSound: null
+        }
+    },
     componentDidMount(){
-        this.props.levelsActions.newGame()
+        const {params, levelsActions, levels} = this.props;
+        if(params.status === "complete"){
+            levelsActions.complete(params.levelNumber);
+        }
+        if(levels.newGame){
+            levelsActions.newGame()
+        }
     },
     _selectLevel(button){
         console.log("press");
-        hashHistory.push("/game/"+ button.level);
+        this._buttonPress(
+            ()=>{
+                hashHistory.push("/game/"+ button.level);
+            }
+        );
+    },
+    _buttonPress(callback){
+        this.setState({playSound: 'button'});
+        setTimeout(()=>{
+            this.setState({playSound: null});
+            if(typeof callback === 'function'){
+                callback();
+            }
+        }, 300);
     },
     _generateLevels(){
         const result = [];
@@ -40,7 +64,7 @@ let Levels = React.createClass({
                 <div className="levels">
                     <div className="wrapper">
                         {this._generateLevels()}
-                        <Barmenu showLives={false} lives={0}/>
+                        <Barmenu showLives={false} playSound={this.state.playSound} lives={0}/>
                     </div>
                 </div>
             </div>

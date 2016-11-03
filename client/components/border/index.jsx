@@ -61,8 +61,8 @@ let Border = React.createClass({
     },
     _updateValue(_left, _right, _isSighnPlus){
         let{left, right, isSighnPlus} = this.state;
-        left = _left || left;
-        right = _right || right;
+        left = _left !== null?_left : left;
+        right = _right !== null?_right : right;
         isSighnPlus = _isSighnPlus === null? isSighnPlus : _isSighnPlus;
 
         let newValue = left+right;

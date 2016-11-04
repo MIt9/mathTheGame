@@ -81,13 +81,17 @@ let Game = React.createClass({
         const {prompt,levelArray, allLevels, currentLevel, lives, options} = this.props.game;
         if(levelArray.length===0){return null}
         const actions = this.props.gameActions;
+        let stars = currentLevel
+        if(prompt === 2 ){
+            stars = 1 + currentLevel
+        }
         return (
             <div className="canvas">
                 <Background/>
 
                 <div className="game">
                     <div className="wrapper">
-                        <LevelLine all={allLevels} count={currentLevel}/>
+                        <LevelLine all={allLevels} count={stars}/>
                         <Border example={levelArray[currentLevel]} action={this._setCurrentValue}/>
                         {prompt !== 0 ? <AnswerPrompt prompt={prompt} action={this._promptClick}/> : <Options optionArray={options} action={actions.pressOption}/>}
                         <Barmenu playSound={this.state.playSound} showLives={true} lives={lives}/>

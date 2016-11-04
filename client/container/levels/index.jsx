@@ -26,14 +26,19 @@ let Levels = React.createClass({
     },
     _selectLevel(button){
         console.log("press");
-        this._buttonPress(
-            ()=>{
-                hashHistory.push("/game/"+ button.level);
-            }
-        );
+        if(button.block){
+            this._buttonPress(null, 'mistake');
+        }else{
+            this._buttonPress(
+                ()=>{
+                    hashHistory.push("/game/"+ button.level);
+                }
+            );
+        }
+
     },
-    _buttonPress(callback){
-        this.setState({playSound: 'button'});
+    _buttonPress(callback, soundId = 'button'){
+        this.setState({playSound: soundId});
         setTimeout(()=>{
             this.setState({playSound: null});
             if(typeof callback === 'function'){
@@ -43,11 +48,13 @@ let Levels = React.createClass({
     },
     _generateLevels(){
         const result = [];
-        const {levelsArray} = this.props.levels;
+        const {levelsArray, completeLevel} = this.props.levels;
         for (var i = 0; i < levelsArray.length; i++) {
+            let full = i<= completeLevel? 'full' : 'empty';
             result.push(<Button key={"level_"+i} button={{
                 level: i,
-                className: "level level_"+(i+1),
+                block: i>completeLevel,
+                className: "level level_"+(i+1)+" "+full,
                 text: ""+(i+1),
                 action: this._selectLevel
             }}/>)

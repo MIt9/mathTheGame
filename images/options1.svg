@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X7 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="30mm" height="40mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 3000 4000"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <font id="FontID0" horiz-adv-x="667" font-variant="normal" style="fill-rule:nonzero" font-weight="400">
+	<font-face 
+		font-family="Arial">
+		<font-face-src>
+			<font-face-name name="Arial"/>
+		</font-face-src>
+	</font-face>
+   <missing-glyph><path d="M0 0z"/></missing-glyph>
+   <glyph unicode="4" horiz-adv-x="556" d="M322.998 0l0 171 -310.995 0 0 80.9998 326.995 464 71.9991 0 0 -464 97.0061 0 0 -80.9998 -97.0061 0 0 -171 -87.9989 0zm0 252l0 322.166 -224.497 -322.166 224.497 0z"/>
+  </font>
+  <style type="text/css">
+   <![CDATA[
+    @font-face { font-family:"Arial";font-variant:normal;font-weight:normal;src:url("#FontID0") format(svg)}
+    .fil3 {fill:#FEFEFE}
+    .fil0 {fill:#027218}
+    .fil2 {fill:#F4171E}
+    .fil1 {fill:white}
+    .fnt0 {font-weight:normal;font-size:1538.77px;font-family:'Arial'}
+   ]]>
+  </style>
+ </defs>
+ <g id="Слой_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_261029968">
+   <path class="fil0" d="M1256 3067c367,85 500,284 571,431 43,87 70,175 101,263 13,36 27,73 46,108 14,26 31,54 58,78l20 17 -94 15 -20 -18c-30,-26 -49,-56 -64,-84 -18,-35 -32,-70 -45,-104l-2 -7c-32,-87 -58,-175 -100,-262 -61,-125 -173,-301 -461,-388 -21,-6 -42,-12 -65,-17l-43 -10 54 -32 44 10z"/>
+   <path class="fil1" d="M1260 1499c367,231 501,771 572,1170 42,238 69,477 101,716 13,98 27,197 46,294 13,70 30,146 57,211l20 47 -94 40 -20 -48c-30,-72 -49,-154 -64,-230 -18,-93 -32,-188 -44,-282l-3 -18c-31,-238 -58,-476 -100,-712 -61,-340 -173,-820 -461,-1055 -20,-16 -42,-32 -65,-46l-43 -28 55 -86 43 27z"/>
+   <circle class="fil1" cx="1492" cy="1456" r="1374"/>
+   <path class="fil2" d="M1492 182c704,0 1274,570 1274,1274 0,704 -570,1274 -1274,1274 -703,0 -1274,-570 -1274,-1274 0,-704 571,-1274 1274,-1274z"/>
+   <g transform="matrix(0.978148 -0.207912 0.207912 0.978148 -805.455 356.734)">
+    <text x="1500" y="2000"  class="fil3 fnt0">4</text>
+   </g>
+  </g>
+ </g>
+</svg>

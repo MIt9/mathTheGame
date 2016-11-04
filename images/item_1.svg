@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="30mm" height="30mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 3000 3000"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil2 {fill:white}
+    .fil1 {fill:url(#id0)}
+    .fil0 {fill:url(#id1)}
+   ]]>
+  </style>
+  <radialGradient id="id0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-0.644565 1.1045 -1.25298 -0.743286 5397 -1165)" cx="2556.77" cy="951.66" r="1212.08" fx="2556.77" fy="951.66">
+   <stop offset="0" style="stop-opacity:1; stop-color:#02B027"/>
+   <stop offset="0.309804" style="stop-opacity:1; stop-color:#02911F"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#027218"/>
+  </radialGradient>
+  <radialGradient id="id1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.28874 -0.530755 0.519263 1.26083 -1312 142)" cx="1185.54" cy="1867.47" r="2662.98" fx="1185.54" fy="1867.47">
+   <stop offset="0" style="stop-opacity:1; stop-color:#3498DB"/>
+   <stop offset="0.188235" style="stop-opacity:1; stop-color:#306B95"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#2C3E50"/>
+  </radialGradient>
+ </defs>
+  <g id="_261030160">
+   <path class="fil0" d="M2577 1407c-30,324 -182,748 -545,1031 -364,283 -876,541 -1304,344 -108,-50 -566,-394 -445,-667 83,-186 172,-394 526,-404 354,-11 818,-374 950,-506 131,-131 252,-273 252,-273 0,0 263,-171 384,-121 122,51 243,212 233,334 -10,121 -51,262 -51,262z"/>
+   <path class="fil1" d="M1913 962c82,-114 374,-236 495,-178 76,-192 140,-426 -70,-584 -39,-29 72,-44 119,-29 247,76 120,455 30,653 200,133 178,267 168,594 -2,49 -89,89 -119,79 -29,-10 -49,-79 -59,-129 -10,-49 -139,40 -149,89 -9,50 -59,30 -59,-10 0,-39 -10,-198 -40,-207 -29,-10 -79,69 -148,89 -69,19 -50,10 -30,-30 20,-40 79,-178 70,-208 -10,-30 -159,79 -179,79 -19,0 -128,10 -148,-20 -20,-29 99,-98 129,-128 29,-30 -40,-20 -40,-30 0,-10 30,-30 30,-30z"/>
+   <path class="fil2" d="M779 1810c25,5 50,8 74,11 253,25 455,-56 676,-194 141,-87 199,-171 292,-293 -84,132 -136,222 -272,323 -249,186 -480,286 -798,256 -28,-7 -45,-37 -37,-65 7,-28 36,-45 65,-38z"/>
+  </g>
+</svg>

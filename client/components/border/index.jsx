@@ -12,7 +12,7 @@ let Border = React.createClass({
             left: 0,
             right: 0,
             isSighnPlus: true,
-            itemIcon: "heartIcon",
+            itemIcon: "item_1",
             savedExample: ""
         }
     },
@@ -81,18 +81,18 @@ let Border = React.createClass({
         return result;
     },
     render() {
-        const {left, right, isSighnPlus} = this.state;
+        const {left, right, isSighnPlus, itemIcon} = this.state;
         const sighnClass = isSighnPlus ? "plus" : "minus";
 
         return (
             <div className="border">
                 <div className={"leftNumber hold-"+left}>
-                    {this._generateItems(left, "heartIcon", "left")}
+                    {this._generateItems(left, itemIcon, "left")}
                 </div>
                 <Button button={{className:"sighn "+sighnClass, action:this._sighnPress}}/>
 
                 <div className={"rightNumber hold-"+right}>
-                    {this._generateItems(right, "heartIcon", "right")}
+                    {this._generateItems(right, itemIcon, "right")}
                 </div>
                 <div className="question"></div>
             </div>

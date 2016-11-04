@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="30mm" height="30mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 3000 3000"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil1 {fill:#01644F}
+    .fil0 {fill:#2C3E50}
+   ]]>
+  </style>
+ </defs>
+ <g >
+  <path class="fil0" d="M1917 2134c327,20 473,-143 482,-278 6,-105 -87,-138 -164,-143 -71,-4 -124,37 -127,81 -3,43 -44,102 -159,95 -50,-4 -93,-23 -90,-74 5,-77 69,-131 417,-383 448,-332 533,-445 545,-640 12,-203 -198,-412 -508,-432 -469,-29 -710,244 -805,349 -37,5 -71,67 -75,131 -7,108 80,178 181,184 61,4 146,-65 143,-167 77,-100 239,-249 478,-234 172,11 255,100 250,178 -7,115 -85,215 -414,442 -339,229 -487,365 -500,575 -14,222 100,300 346,316zm-82 547c146,9 210,-106 217,-210 7,-122 -38,-206 -136,-212 -152,-9 -215,78 -225,240 -7,108 77,178 144,182z"/>
+  <path class="fil1" d="M1253 1523l-1028 0 0 -179 1028 0 0 179zm0 472l-1028 0 0 -178 1028 0 0 178z"/>
+ </g>
+</svg>

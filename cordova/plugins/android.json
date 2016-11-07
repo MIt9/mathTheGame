@@ -7,8 +7,17 @@
         "files": {}
     },
     "installed_plugins": {
+        "cordova-plugin-device-motion": {
+            "PACKAGE_NAME": "ua.siniidrozd.veggiemath"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "ua.siniidrozd.veggiemath"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "ua.siniidrozd.veggiemath"
+        },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "bi.dmitrii.toten"
+            "PACKAGE_NAME": "ua.siniidrozd.veggiemath"
         }
     },
     "dependent_plugins": {}

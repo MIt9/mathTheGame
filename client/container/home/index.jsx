@@ -14,6 +14,9 @@ let Home = React.createClass({
             playSound: null
         }
     },
+    componentDidMount(){
+
+    },
     _chgLanguage(){
         const currentLng = localStorage.lng;
         const allLng = Object.keys(LANGUAGE);

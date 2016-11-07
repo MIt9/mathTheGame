@@ -54,7 +54,7 @@ let Levels = React.createClass({
             result.push(<Button key={"level_"+i} button={{
                 level: i,
                 block: i>completeLevel,
-                className: "level level_"+(i+1)+" "+full,
+                className: "levelCloud level_"+(i+1)+" "+full,
                 text: ""+(i+1),
                 action: this._selectLevel
             }}/>)

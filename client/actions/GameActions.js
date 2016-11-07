@@ -21,8 +21,7 @@ export function setCurrentVal(value){
     }
 }
 
-export function pressOption(option) {
-    const answer = parseInt(option.text);
+export function pressOption(answer) {
     return {
         type: 'PRESS',
         answer

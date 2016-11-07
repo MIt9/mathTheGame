@@ -1,4 +1,4 @@
-if (!localStorage.lng){localStorage.setItem('lng', "en")}
+
 
 import React from 'react';
 import { render } from 'react-dom';
@@ -22,13 +22,32 @@ store.subscribe(()=>{
        levels:store.getState().levels
    });
 });
+function renderApp(){
+    render(
+        <Provider store={store}>
+            <Router history={hashHistory}>
+                <Route path="/" component={Home}/>
+                <Route path="/levels(/:status/:levelNumber)" component={Levels}/>
+                <Route path="/game/:level" component={Game}/>
+            </Router>
+        </Provider>, document.getElementById('app'));
+}
+document.addEventListener("deviceready", ()=>{
+    if(!localStorage.lng){
+        navigator.globalization.getPreferredLanguage(
+            (country)=>{
+                const lng = country.value.split("-");
+                localStorage.setItem("lng",lng[0]);
+            },
+            (e)=>{console.log(e)});
+        renderApp();
+    }else{
+        renderApp();
+    }
 
+}, false);
 
-render(
-    <Provider store={store}>
-        <Router history={hashHistory}>
-            <Route path="/" component={Home}/>
-            <Route path="/levels(/:status/:levelNumber)" component={Levels}/>
-            <Route path="/game/:level" component={Game}/>
-        </Router>
-    </Provider>, document.getElementById('app'));
+if(typeof cordova === 'undefined'){
+    if (!localStorage.lng){localStorage.setItem('lng', "en")}
+    renderApp();
+}

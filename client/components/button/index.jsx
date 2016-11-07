@@ -29,17 +29,17 @@ let Button = React.createClass({
                     tapped: false
                 })
             }
-        }, 300);
+        }, 500);
         if (typeof button.action === 'function') {
             button.action(button);
         }
     },
 
     render() {
-        let {text, className} =this.props.button;
+        let {text, className, cssStyle} =this.props.button;
         className = this.state.tapped ? className + ' tapped' : className;
         return (
-            <div className={className} onClick={this._click}>{text}</div>
+            <div className={className} onClick={this._click} style={cssStyle}>{text}</div>
         )
     }
 });

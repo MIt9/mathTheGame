@@ -25,6 +25,15 @@
       background-position: center;
       background-size: cover;
       position:absolute;
+      transition:0.5s;
+      &.tapped{
+        -webkit-animation-duration: 0.6s;
+        animation-duration: 0.6s;
+        //-webkit-animation-fill-mode: both;
+        //animation-fill-mode: both;
+        -webkit-animation-name: rotateOut;
+        animation-name: rotateOut;
+      }
     }
     &.hold-1{
       .i1{
@@ -181,33 +190,31 @@
         height:0;
       }
       .i1{
-        top:25%;
+        top: 5%;
       }
       .i2{
-        top:50%;
+        top: 5%;
+        left: 54%;
       }
       .i3{
+        top:25%;
+      }
+      .i4{
         top: 25%;
         left: 54%;
       }
-      .i4{
+      .i5{
+        top:50%;
+      }
+      .i6{
         top: 50%;
         left: 54%;
       }
-      .i5{
-        top: 70%;
-        left: 24%;
-      }
-      .i6{
-        top: 5%;
-        left: 24%;
-      }
       .i7{
-        top: 40%;
-        left: 0%;
+        bottom:5%;
       }
       .i8{
-        top: 40%;
+        bottom:5%;
         left: 54%;
       }
 
@@ -219,33 +226,31 @@
         height:0;
       }
       .i1{
-        top:25%;
+        top: 5%;
       }
       .i2{
-        top:50%;
+        top: 5%;
+        left: 54%;
       }
       .i3{
+        top:25%;
+      }
+      .i4{
         top: 25%;
         left: 54%;
       }
-      .i4{
+      .i5{
+        top:50%;
+      }
+      .i6{
         top: 50%;
         left: 54%;
       }
-      .i5{
-        top: 70%;
-        left: 24%;
-      }
-      .i6{
-        top: 5%;
-        left: 24%;
-      }
       .i7{
-        top: 40%;
-        left: 0%;
+        bottom:5%;
       }
       .i8{
-        top: 40%;
+        bottom:5%;
         left: 54%;
       }
       .i9{
@@ -300,4 +305,35 @@
 }
 .item_1{
   background-image: url(@item_1);
+}
+@-webkit-keyframes rotateOut {
+  from {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: rotate3d(0, 0, 1, 200deg);
+    transform: rotate3d(0, 0, 1, 200deg);
+    opacity: 0;
+  }
+}
+
+@keyframes rotateOut {
+  from {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: rotate3d(0, 0, 1, 200deg);
+    transform: rotate3d(0, 0, 1, 200deg);
+    opacity: 0;
+  }
 }

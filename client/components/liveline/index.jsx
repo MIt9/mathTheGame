@@ -10,7 +10,7 @@ let LiveLine = React.createClass({
     _lifeCount(count){
         const hearts = [];
         for (let i = 1; i < 4; i++) {
-            let className = "heart empty";
+            let className = "heart empty animation swing";
             if(count-i>=0){
                 className="heart";
             }

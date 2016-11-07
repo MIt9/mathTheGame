@@ -14,7 +14,7 @@ let LevelLife = React.createClass({
         for (let i = 0; i < all; i++) {
             let className = "level empty";
             if(count-i>0){
-                className="level";
+                className="level animated flipInY";
             }
             hearts.push(<div key={"level"+i} className={className} style={style}></div>)
         }

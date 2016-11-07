@@ -20,7 +20,6 @@ const soundManager = SM.soundManager;
 let Barmenu = React.createClass({
     getInitialState(){
         return {
-            //нажата или ненажата кнопка
             sound: false,
             playSound: null
         }
@@ -83,6 +82,7 @@ let Barmenu = React.createClass({
             hashHistory.push(rout[hash]);
         } else {
             console.log('exit');
+            navigator.app.exitApp();
         }
     },
     render() {

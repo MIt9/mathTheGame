@@ -13,17 +13,50 @@ let Border = React.createClass({
             right: 0,
             isSighnPlus: true,
             itemIcon: "item_1",
-            savedExample: ""
+            savedExample: "",
+            rotate: 0
         }
     },
 
     componentWillMount(){
         this._updateBoard(this.props.example);
+        if (window.DeviceOrientationEvent) {
+            // Listen for the event and handle DeviceOrientationEvent object
+            window.addEventListener('deviceorientation', this._devOrientHandler, false);
+        }
+        if(typeof cordova !== 'undefined'){
+            this.accelerationId = navigator.accelerometer.watchAcceleration(this._accelerometerSuccess,
+                this._accelerometerError,{ frequency: 500 });
+        }
+    },
+    componentWillUnmount(){
+        if(typeof cordova !== 'undefined'){
+            navigator.accelerometer.clearWatch(this.accelerationId);
+        }
     },
     componentWillReceiveProps(nextProps){
-        if(nextProps.example !== this.state.savedExample){
+        if (nextProps.example !== this.state.savedExample) {
             this._updateBoard(nextProps.example);
         }
+    },
+    _devOrientHandler(a){
+        const tiltLR = Math.floor(a.gamma);
+        this.setState({
+            rotate: tiltLR
+        });
+
+        console.log(tiltLR);
+    },
+    _accelerometerSuccess(a){
+        const rotate = a.x / 10 * 90;
+        if(rotate !== this.state.rotate){
+            this.setState({
+                rotate: rotate
+            });
+        }
+    },
+    _accelerometerError(e){
+        console.warn(e);
     },
     _updateBoard(e){
         const left = parseInt(e[0]);
@@ -33,24 +66,27 @@ let Border = React.createClass({
             left,
             isSighnPlus,
             right,
-            savedExample:e
+            savedExample: e
         });
         this._updateValue(left, right, isSighnPlus);
     },
     _itemPress(button){
         let {left, right } = this.state;
-        if (button.side === "left") {
-            left = left - 1;
-            this.setState({
-                left: left
-            })
-        } else {
-            right = right - 1;
-            this.setState({
-                right: right
-            })
-        }
-        this._updateValue(left, right, null);
+        setTimeout(()=> {
+            if (button.side === "left") {
+                left = left - 1;
+                this.setState({
+                    left: left
+                })
+            } else {
+                right = right - 1;
+                this.setState({
+                    right: right
+                })
+            }
+            this._updateValue(left, right, null);
+        }, 500);
+
     },
     _sighnPress(){
         const isSighnPlus = !this.state.isSighnPlus;
@@ -60,39 +96,40 @@ let Border = React.createClass({
         this._updateValue(null, null, isSighnPlus);
     },
     _updateValue(_left, _right, _isSighnPlus){
-        let{left, right, isSighnPlus} = this.state;
-        left = _left !== null?_left : left;
-        right = _right !== null?_right : right;
-        isSighnPlus = _isSighnPlus === null? isSighnPlus : _isSighnPlus;
+        let {left, right, isSighnPlus} = this.state;
+        left = _left !== null ? _left : left;
+        right = _right !== null ? _right : right;
+        isSighnPlus = _isSighnPlus === null ? isSighnPlus : _isSighnPlus;
 
-        let newValue = left+right;
+        let newValue = left + right;
         if (!isSighnPlus) {
-            newValue = left-right;
+            newValue = left - right;
         }
         this.props.action(newValue);
     },
-    _generateItems(count, icon, side){
+    _generateItems(count, icon, side, rotate){
         const result = [];
+        const cssStyle = {transform: "rotate(" + rotate + "deg)"};
         for (let i = 0; i < count; i++) {
             const className = 'item ' + icon + ' i' + (i + 1);
-            result.push(<Button key={'item_'+i} button={{className:className, side:side, action:this._itemPress}}/>)
-
+            result.push(<Button key={'item_'+i} button={
+            {className: className, side: side, action: this._itemPress, cssStyle: cssStyle}
+            }/>)
         }
         return result;
     },
     render() {
-        const {left, right, isSighnPlus, itemIcon} = this.state;
+        const {left, right, isSighnPlus, itemIcon, rotate} = this.state;
         const sighnClass = isSighnPlus ? "plus" : "minus";
-
         return (
             <div className="border">
                 <div className={"leftNumber hold-"+left}>
-                    {this._generateItems(left, itemIcon, "left")}
+                    {this._generateItems(left, itemIcon, "left", rotate)}
                 </div>
                 <Button button={{className:"sighn "+sighnClass, action:this._sighnPress}}/>
 
                 <div className={"rightNumber hold-"+right}>
-                    {this._generateItems(right, itemIcon, "right")}
+                    {this._generateItems(right, itemIcon, "right", rotate)}
                 </div>
                 <div className="question"></div>
             </div>

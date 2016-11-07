@@ -3,3 +3,4 @@ tmpGame/
 test/
 .idea/
 .DS_Store
+cordova/platforms

@@ -55,7 +55,7 @@ let Game = React.createClass({
                         this.props.gameActions.nextExample();
                         break;
                     case 2:
-                        hashHistory.push("/levels/complete/" + this.props.params.level);
+                        hashHistory.push("/video/" + this.props.params.level);
                         break;
                     case 3:
                         hashHistory.push("/levels");
@@ -92,9 +92,6 @@ let Game = React.createClass({
         }
         const animationClass = "wrapper animated " + this.state.animationClass;
         return (
-            <div className="canvas">
-                <Background/>
-
                 <div className="game">
                     <div className={animationClass}>
                         <LevelLine all={allLevels} count={stars}/>
@@ -104,7 +101,6 @@ let Game = React.createClass({
                         <Barmenu playSound={this.state.playSound} showLives={true} lives={lives}/>
                     </div>
                 </div>
-            </div>
         )
     }
 });

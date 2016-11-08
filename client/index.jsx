@@ -12,6 +12,7 @@ import {} from './style.less';
 import Game from './container/game/index.jsx';
 import Home from './container/home/index.jsx';
 import Levels from './container/levels/index.jsx';
+import Video from './container/video/index.jsx';
 import configureStore from './store/configureStore'
 
 const persistedState = loadState();
@@ -27,6 +28,7 @@ function renderApp(){
         <Provider store={store}>
             <Router history={hashHistory}>
                 <Route path="/" component={Home}/>
+                <Route path="/video/:level" component={Video}/>
                 <Route path="/levels(/:status/:levelNumber)" component={Levels}/>
                 <Route path="/game/:level" component={Game}/>
             </Router>

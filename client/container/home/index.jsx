@@ -45,9 +45,6 @@ let Home = React.createClass({
     render() {
 
         return (
-            <div className="canvas">
-                <Background/>
-
                 <div className="home">
                     <div className="wrapper">
                         <Button button={{className:"lng "+localStorage.lng, action:this._chgLanguage}}/>
@@ -56,7 +53,6 @@ let Home = React.createClass({
                         <Barmenu playSound={this.state.playSound}/>
                     </div>
                 </div>
-            </div>
         )
     }
 });

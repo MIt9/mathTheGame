@@ -8,7 +8,8 @@ const PROMPTS = {
     0: "START",
     1: "RIGHT_ANSWER",
     2: "CONGRATULATION",
-    3: "GAME_OVER"
+    3: "GAME_OVER",
+    4: "PLAY"
 };
 
 let AnswerPrompt = React.createClass({
@@ -42,7 +43,7 @@ let AnswerPrompt = React.createClass({
                     </g>
                     <path stroke="black" strokeWidth="7.62" fill="white" d="M83 1241c148,-633 1098,-429 1603,-484 224,-24 927,-94 1057,-100 174,-9 729,121 730,396 1,273 116,844 -60,918 -544,341 -2250,275 -2901,250 -474,-19 -383,-422 -383,-424 -43,-162 -111,-330 -46,-556z"/>
                     <path fill="#01644F" stroke="black" strokeWidth="7.62" d="M1043 2209c474,6 2492,-12 2376,-409 44,-393 38,-577 -28,-764 -89,-254 -369,-419 -1544,-249 -627,91 -1423,-116 -1654,373 -170,360 -32,277 -23,654 9,382 283,386 873,395z"/>
-                    <text stroke="#000" transform="rotate(-3.9734346866607666 674.8984374999966,1375.085937500001) " textAnchor="middle" fontFamily="Days, sans-serif" fontSize="350" letterSpacing="30" id="svg_12" y="1700" x="1600" strokeWidth="0" fill="#fcf9f9">{L[PROMPTS[prompt]]}</text>
+                    <text stroke="#000" transform="rotate(-3.9734346866607666 674.8984374999966,1375.085937500001) " textAnchor="middle" fontFamily="Days, sans-serif" fontSize="350" letterSpacing="30" id="svg_12" y="1700" x="1750" strokeWidth="0" fill="#fcf9f9">{L[PROMPTS[prompt]]}</text>
                     {prompt != 3?
                         <g id="_691833688">
                             <g>

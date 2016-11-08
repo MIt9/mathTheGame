@@ -31,6 +31,10 @@ let Barmenu = React.createClass({
             sound: localStorage.sound === "true"
         });
         soundManager.setup({onready: this._loadSoundLibery});
+        document.addEventListener("backbutton", this._exitGame, false);
+    },
+    componentWillUnmount(){
+        document.removeEventListener("backbutton", this._exitGame, false);
     },
     componentWillReceiveProps(nextProps) {
         if (nextProps.playSound !== this.state.playSound) {
@@ -75,6 +79,7 @@ let Barmenu = React.createClass({
         hash = hash.split('/')[0];
         const rout = {
             'game': '/levels',
+            'video': '/levels',
             'levels': '/'
         };
         this._playSound('button');

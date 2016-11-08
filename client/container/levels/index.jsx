@@ -65,16 +65,12 @@ let Levels = React.createClass({
     render() {
 
         return (
-            <div className="canvas">
-                <Background/>
-
                 <div className="levels">
                     <div className="wrapper">
                         {this._generateLevels()}
                         <Barmenu showLives={false} playSound={this.state.playSound} lives={0}/>
                     </div>
                 </div>
-            </div>
         )
     }
 });

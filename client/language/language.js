@@ -7,6 +7,7 @@ export default {
         START: "Start",
         RIGHT_ANSWER: "Right answer",
         CONGRATULATION: "Congratulation",
+        PLAY: "Next level",
         GAME_OVER: "Game over"
     },
     uk: {
@@ -14,6 +15,7 @@ export default {
         START: "Старт",
         RIGHT_ANSWER: "Чудово",
         CONGRATULATION: "Перемога",
+        PLAY: "Грати далі",
         GAME_OVER: "Кинець гри"
     },
     ru: {
@@ -21,6 +23,7 @@ export default {
         START: "Старт",
         RIGHT_ANSWER: "Красавчег",
         CONGRATULATION: "Победа",
+        PLAY: "Играть дальше",
         GAME_OVER: "Конец игры"
     }
 

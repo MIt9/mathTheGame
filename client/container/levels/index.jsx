@@ -49,7 +49,7 @@ let Levels = React.createClass({
     _generateLevels(){
         const result = [];
         const {levelsArray, completeLevel} = this.props.levels;
-        for (var i = 0; i < levelsArray.length; i++) {
+        for (let i = 0; i < levelsArray.length; i++) {
             let full = i<= completeLevel? 'full' : 'empty';
             result.push(<Button key={"level_"+i} button={{
                 level: i,

@@ -90,7 +90,7 @@ function _splitLevels(array, count){
     result.push(tmpArray);
     return result;
 }
-export function newList() {
+function newList() {
     const list = _shuffleAll();
     const levelsArray = _splitLevels(list, 7);
     return levelsArray;

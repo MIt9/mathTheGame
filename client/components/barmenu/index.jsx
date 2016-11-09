@@ -8,12 +8,12 @@ import Button from '../button/index.jsx';
 import LiveLine from '../liveline/index.jsx';
 import {} from './style.less';
 const AUDIO = {
-    'backSound':'audio/lezaarth_drum.mp3',
-    'congratulation':'audio/congratulation.mp3',
-    'loss':'audio/loss.mp3',
-    'mistake':'audio/mistake.mp3',
-    'button':'audio/button.mp3',
-    'bubble':'audio/bubble.mp3'
+    'backSound':'audio/lemoncreme.ogg',
+    'congratulation':'audio/congratulation.ogg',
+    'loss':'audio/loss.ogg',
+    'mistake':'audio/mistake.ogg',
+    'button':'audio/button.ogg',
+    'bubble':'audio/bubble.ogg'
 };
 const soundManager = SM.soundManager;
 
@@ -30,19 +30,19 @@ let Barmenu = React.createClass({
         this.setState({
             sound: localStorage.sound === "true"
         });
-        soundManager.setup({onready: this._loadSoundLibery});
+        soundManager.setup({onready: this._loadSoundLibery, debugMode: false});
         document.addEventListener("backbutton", this._exitGame, false);
     },
     componentWillUnmount(){
         document.removeEventListener("backbutton", this._exitGame, false);
     },
     componentWillReceiveProps(nextProps) {
-        if (nextProps.playSound !== this.state.playSound) {
+        if (nextProps.playSound !== this.state.playSound && nextProps.playSound !== null) {
             this._playSound(nextProps.playSound)
         }
     },
     _playSound(soundName){
-        if(soundName && this.state.sound){
+        if(soundName !== null && this.state.sound){
             soundManager.play(soundName, {volume:100});
             this.setState({ playSound: null });
         }else{

@@ -6,7 +6,7 @@ import Barmenu from '../../components/barmenu/index.jsx';
 import Button from '../../components/button/index.jsx';
 import AnswerPrompt from '../../components/answerprompt/index.jsx';
 import LANGUAGE from '../../language/language.js';
-let L = LANGUAGE[localStorage.lng || 'en'];
+let L = LANGUAGE[localStorage.lng];
 
 let Home = React.createClass({
     getInitialState(){

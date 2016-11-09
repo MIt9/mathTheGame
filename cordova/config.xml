@@ -10,6 +10,10 @@
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="FadeSplashScreen" value="false"/>
     <preference name="SplashScreenBackgroundColor" value="#00c5ca" />
+    <preference name="ShowSplashScreenSpinner" value="false" />
+    <preference name="android-minSdkVersion" value="14" />
+    <preference name="StatusBarBackgroundColor" value="#0f5daa" />
+    <preference name="StatusBarStyle" value="lightcontent" />
     <author email="siniidrozd@gmail.com" href="http://cordova.io">
         Dmitrii Bilukha
     </author>
@@ -25,6 +29,7 @@
 
     <plugin name="cordova-plugin-device-motion" spec="~1.2.2" />
     <plugin name="cordova-plugin-splashscreen" spec="~4.0.0" />
+    <plugin name="cordova-plugin-statusbar" source="npm" version="2.2.0"/>
     <access origin="*" />
     <allow-navigation href="*" />
     <allow-intent href="http://*/*" />

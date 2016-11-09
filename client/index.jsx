@@ -14,6 +14,7 @@ import Home from './container/home/index.jsx';
 import Levels from './container/levels/index.jsx';
 import Video from './container/video/index.jsx';
 import configureStore from './store/configureStore'
+import LANGUAGE from './language/language.js';
 
 const persistedState = loadState();
 const store = configureStore(persistedState);
@@ -39,7 +40,11 @@ document.addEventListener("deviceready", ()=>{
         navigator.globalization.getPreferredLanguage(
             (country)=>{
                 const lng = country.value.split("-");
-                localStorage.setItem("lng",lng[0]);
+                if(LANGUAGE[lng[0]] !== undefined){
+                    localStorage.setItem("lng",lng[0]);
+                }else{
+                    localStorage.setItem("lng",'en');
+                }
             },
             (e)=>{console.log(e)});
         renderApp();

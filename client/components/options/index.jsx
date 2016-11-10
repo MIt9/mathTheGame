@@ -60,7 +60,7 @@ let Options = React.createClass({
                         <circle fill="white" cx="1492" cy="1456" r="1374"/>
                         <path fill="#F4171E" d="M1492 182c704,0 1274,570 1274,1274 0,704 -570,1274 -1274,1274 -703,0 -1274,-570 -1274,-1274 0,-704 571,-1274 1274,-1274z"/>
                     </g>
-                    <text stroke="#000" transform="rotate(-8 1402,1358) matrix(65,0,0,64.6,-71644,-94552) " textAnchor="middle" fontFamily="Helvetica, Arial, sans-serif" fontSize="24" y="1494" x="1125" strokeWidth="0" fill="#ffffff">{optionArray[0]}</text>
+                    <text stroke="#000" transform="rotate(-8 1402,1358) matrix(65,0,0,64.6,-71644,-94552) " textAnchor="middle" fontFamily="Days, sans-serif" fontSize="24" y="1494" x="1125" strokeWidth="0" fill="#ffffff">{optionArray[0]}</text>
                 </svg>
                 <svg key="option_1" className={"option2 "+this.state[1]} onClick={()=>{this._onClick(1)}}  width="30mm" height="40mm" version="1.1" viewBox="0 0 3000 4000">
                     <g >
@@ -69,7 +69,7 @@ let Options = React.createClass({
                         <path fill="white" d="M1440 37c664,0 1202,539 1202,1203 0,664 -538,1202 -1202,1202 -664,0 -1203,-538 -1203,-1202 0,-664 539,-1203 1203,-1203z"/>
                         <path fill="#F4171E" d="M1440 125c615,0 1114,499 1114,1115 0,615 -499,1114 -1114,1114 -616,0 -1115,-499 -1115,-1114 0,-616 499,-1115 1115,-1115z"/>
                     </g>
-                    <text stroke="#000" transform="rotate(-8 1402,1358) matrix(65,0,0,64.45,-71644,-94552) " textAnchor="middle" fontFamily="Helvetica, Arial, sans-serif" fontSize="24" y="1494" x="1125" strokeWidth="0" fill="#ffffff">{optionArray[1]}</text>
+                    <text stroke="#000" transform="rotate(-8 1402,1358) matrix(65,0,0,64.45,-71644,-94552) " textAnchor="middle" fontFamily="Days, sans-serif" fontSize="24" y="1494" x="1125" strokeWidth="0" fill="#ffffff">{optionArray[1]}</text>
                 </svg>
                 <svg key="option_2" className={"option3 "+this.state[2]} onClick={()=>{this._onClick(2)}}  width="30mm" height="40mm" version="1.1" viewBox="0 0 3000 4000">
                     <g >
@@ -78,7 +78,7 @@ let Options = React.createClass({
                         <path fill="white" d="M1454 73c731,0 1323,593 1323,1324 0,731 -592,1323 -1323,1323 -731,0 -1324,-592 -1324,-1323 0,-731 593,-1324 1324,-1324z"/>
                         <path fill="#F4171E" d="M1454 169c678,0 1227,550 1227,1228 0,677 -549,1227 -1227,1227 -678,0 -1227,-550 -1227,-1227 0,-678 549,-1228 1227,-1228z"/>
                     </g>
-                    <text stroke="#000" transform="rotate(2 1402,1358) matrix(65,0,0,64.5,-71644,-94552)" textAnchor="middle" fontFamily="Helvetica, Arial, sans-serif" fontSize="24" y="1494" x="1125" strokeWidth="0" fill="#ffffff">{optionArray[2]}</text>
+                    <text stroke="#000" transform="rotate(2 1402,1358) matrix(65,0,0,64.5,-71644,-94552)" textAnchor="middle" fontFamily="Days, sans-serif" fontSize="24" y="1494" x="1125" strokeWidth="0" fill="#ffffff">{optionArray[2]}</text>
                 </svg>
 
                 <svg key="option_3" className={"option4 "+this.state[3]} onClick={()=>{this._onClick(3)}}  width="30mm" height="40mm" version="1.1" viewBox="0 0 3000 4000">
@@ -88,7 +88,7 @@ let Options = React.createClass({
                         <circle fill="white" cx="1476" cy="1452" r="1422"/>
                         <path fill="#F4171E" d="M1476 134c728,0 1318,590 1318,1318 0,728 -590,1318 -1318,1318 -728,0 -1318,-590 -1318,-1318 0,-728 590,-1318 1318,-1318z"/>
                     </g>
-                    <text stroke="#000" transform="rotate(10 1402,1358) matrix(65,0,0,64.6,-71644,-94552) " textAnchor="middle" fontFamily="Helvetica, Arial, sans-serif" fontSize="24" y="1494" x="1125" strokeWidth="0" fill="#ffffff">{optionArray[3]}</text>
+                    <text stroke="#000" transform="rotate(10 1402,1358) matrix(65,0,0,64.6,-71644,-94552) " textAnchor="middle" fontFamily="Days, sans-serif" fontSize="24" y="1494" x="1125" strokeWidth="0" fill="#ffffff">{optionArray[3]}</text>
                 </svg>
             </div>
         )

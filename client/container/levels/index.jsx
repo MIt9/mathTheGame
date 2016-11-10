@@ -50,7 +50,7 @@ let Levels = React.createClass({
         const result = [];
         const {levelsArray, completeLevel} = this.props.levels;
         for (let i = 0; i < levelsArray.length; i++) {
-            let full = i<= completeLevel? 'full' : 'empty';
+            let full = i<= completeLevel? 'full animated flipInY' : 'empty';
             result.push(<Button key={"level_"+i} button={{
                 level: i,
                 block: i>completeLevel,

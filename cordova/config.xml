@@ -1,18 +1,18 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="ua.siniidrozd.veggiemath" version="1.4.006" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="ua.siniidrozd.veggiemath" version="1.5.006" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Veggie math</name>
     <description>
         Teach math
     </description>
     <preference name="orientation" value="portrait" />
-    <preference name="fullscreen" value="true" />
+    <preference name="fullscreen" value="false" />
     <preference name="AutoHideSplashScreen" value="true" />
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="FadeSplashScreen" value="false"/>
     <preference name="SplashScreenBackgroundColor" value="#00c5ca" />
     <preference name="ShowSplashScreenSpinner" value="false" />
     <preference name="android-minSdkVersion" value="14" />
-    <preference name="StatusBarBackgroundColor" value="#0f5daa" />
+    <preference name="StatusBarBackgroundColor" value="#028c90" />
     <preference name="StatusBarStyle" value="lightcontent" />
     <author email="siniidrozd@gmail.com" href="http://cordova.io">
         Dmitrii Bilukha

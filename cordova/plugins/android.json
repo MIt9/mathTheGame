@@ -18,6 +18,9 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "ua.siniidrozd.veggiemath"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "ua.siniidrozd.veggiemath"
         }
     },
     "dependent_plugins": {}

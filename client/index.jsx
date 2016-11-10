@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import { render } from 'react-dom';
 import { createStore } from 'redux';
@@ -36,18 +34,22 @@ function renderApp(){
         </Provider>, document.getElementById('app'));
 }
 document.addEventListener("deviceready", ()=>{
-    if(!localStorage.lng){
+    if(!localStorage.getItem('lng')){
         navigator.globalization.getPreferredLanguage(
             (country)=>{
-                const lng = country.value.split("-");
-                if(LANGUAGE[lng[0]] !== undefined){
-                    localStorage.setItem("lng",lng[0]);
+                const lng = country.value.split("-")[0];
+                if(LANGUAGE[lng]){
+                    localStorage.setItem("lng", lng);
                 }else{
                     localStorage.setItem("lng",'en');
                 }
+                renderApp();
             },
-            (e)=>{console.log(e)});
-        renderApp();
+            (e)=>{
+                console.log(e);
+                localStorage.setItem("lng",'en');
+                renderApp();
+            });
     }else{
         renderApp();
     }

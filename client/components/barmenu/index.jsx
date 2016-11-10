@@ -30,7 +30,11 @@ let Barmenu = React.createClass({
         this.setState({
             sound: localStorage.sound === "true"
         });
-        soundManager.setup({onready: this._loadSoundLibery, debugMode: false});
+        soundManager.setup({
+            onready: this._loadSoundLibery,
+            useHTML5Audio: true,
+            debugMode: false
+        });
         document.addEventListener("backbutton", this._exitGame, false);
     },
     componentWillUnmount(){
@@ -43,7 +47,11 @@ let Barmenu = React.createClass({
     },
     _playSound(soundName){
         if(soundName !== null && this.state.sound){
-            soundManager.play(soundName, {volume:100});
+            soundManager.pause('backSound');
+            soundManager.play(soundName, {
+                volume:100,
+                onfinish:this._playBackgroundSound
+            });
             this.setState({ playSound: null });
         }else{
             this.setState({ playSound: null });
@@ -58,7 +66,7 @@ let Barmenu = React.createClass({
         }
     },
     _playBackgroundSound(){
-        soundManager.play('backSound',{loops:100, volume:20});
+        soundManager.play('backSound',{loops:100, volume:30});
     },
     _soundTrigger(){
         const soundOn = !this.state.sound;

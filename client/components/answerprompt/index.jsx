@@ -30,7 +30,7 @@ let AnswerPrompt = React.createClass({
     },
 //{L[PROMPTS[this.props.prompt]]}
     render() {
-        const L = LANGUAGE[localStorage.lng];
+        const L = LANGUAGE[localStorage.getItem('lng')||'en'];
         const prompt = this.props.prompt;
         const promptClass = "answerPrompt animated "+ this.state.animationClass;
         return (

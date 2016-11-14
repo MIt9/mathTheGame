@@ -44,8 +44,6 @@ let Border = React.createClass({
         this.setState({
             rotate: tiltLR
         });
-
-        console.log(tiltLR);
     },
     _accelerometerSuccess(a){
         const rotate = a.x / 10 * 90;

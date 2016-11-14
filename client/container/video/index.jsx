@@ -45,7 +45,7 @@ let Video = React.createClass({
                             frameborder="0" allowfullscreen
                         </iframe>
                         <AnswerPrompt prompt={4} action={this._promptClick}/>
-                        <Barmenu playSound={this.state.playSound} showLives={false} lives={0}/>
+                        <Barmenu backgroundMute={true} playSound={this.state.playSound} showLives={false} lives={0}/>
                     </div>
                 </div>
         )

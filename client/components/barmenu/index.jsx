@@ -25,7 +25,7 @@ let Barmenu = React.createClass({
         }
     },
 
-    componentWillMount(){
+    componentDidMount(){
         if (localStorage.sound === undefined){localStorage.setItem('sound', "true")}
         this.setState({
             sound: localStorage.sound === "true"
@@ -35,15 +35,24 @@ let Barmenu = React.createClass({
             useHTML5Audio: true,
             debugMode: false
         });
+
         document.addEventListener("backbutton", this._exitGame, false);
+        if (this.props.backgroundMute == true) {
+            soundManager.pauseAll();
+        }else if(localStorage.sound === "true"){
+            this._playBackgroundSound();
+        }
     },
     componentWillUnmount(){
         document.removeEventListener("backbutton", this._exitGame, false);
+        soundManager.stopAll();
     },
     componentWillReceiveProps(nextProps) {
         if (nextProps.playSound !== this.state.playSound && nextProps.playSound !== null) {
             this._playSound(nextProps.playSound)
         }
+
+
     },
     _playSound(soundName){
         if(soundName !== null && this.state.sound){
@@ -66,9 +75,19 @@ let Barmenu = React.createClass({
         }
     },
     _playBackgroundSound(){
-        soundManager.play('backSound',{loops:100, volume:30});
+        if(!this.props.backgroundMute){
+            soundManager.play('backSound',{
+                loops:100,
+                volume:30,
+                onerror:()=>{soundManager.play('backSound',{loops:100, volume:30, url:AUDIO['backSound']})
+                }
+            });
+        }else{
+            soundManager.pauseAll();
+        }
     },
     _soundTrigger(){
+        this._playSound('button');
         const soundOn = !this.state.sound;
         this.setState({
             sound: soundOn
@@ -79,7 +98,6 @@ let Barmenu = React.createClass({
         }else{
             soundManager.stopAll();
         }
-        this._playSound('button');
     },
     _exitGame(){
         let hash = window.location.hash.split('?')[0];

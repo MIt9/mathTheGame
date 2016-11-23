@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="ua.siniidrozd.veggiemath" version="1.5.007" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="ua.siniidrozd.veggiemath" version="1.6.005" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Veggie math</name>
     <description>
         Teach math
@@ -7,8 +7,8 @@
     <preference name="orientation" value="portrait" />
     <preference name="fullscreen" value="false" />
     <preference name="AutoHideSplashScreen" value="true" />
-    <preference name="SplashScreenDelay" value="3000" />
-    <preference name="FadeSplashScreen" value="false"/>
+    <preference name="SplashScreenDelay" value="5000" />
+    <preference name="FadeSplashScreen" value="false" />
     <preference name="SplashScreenBackgroundColor" value="#00c5ca" />
     <preference name="ShowSplashScreenSpinner" value="false" />
     <preference name="android-minSdkVersion" value="14" />
@@ -18,20 +18,18 @@
         Dmitrii Bilukha
     </author>
     <content src="index.html" />
-
     <platform name="android">
         <plugin name="cordova-plugin-whitelist" spec="1" />
         <plugin name="cordova-plugin-globalization" spec="~1.0.4" />
         <icon src="icon/icon.png" />
     </platform>
-
-    <splash src="splash/splash.9.png"/>
-
+    <splash src="splash/splash.9.png" />
     <plugin name="cordova-plugin-device-motion" spec="~1.2.2" />
     <plugin name="cordova-plugin-splashscreen" spec="~4.0.0" />
-    <plugin name="cordova-plugin-statusbar" source="npm" version="2.2.0"/>
+    <plugin name="cordova-plugin-statusbar" source="npm" version="2.2.0" />
     <access origin="*" />
     <allow-navigation href="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
+    <plugin name="cordova-plugin-inappbrowser" spec="~1.5.0" />
 </widget>

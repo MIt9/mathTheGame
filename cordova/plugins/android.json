@@ -21,6 +21,9 @@
         },
         "cordova-plugin-statusbar": {
             "PACKAGE_NAME": "ua.siniidrozd.veggiemath"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "ua.siniidrozd.veggiemath"
         }
     },
     "dependent_plugins": {}

@@ -12,7 +12,7 @@ let Border = React.createClass({
             left: 0,
             right: 0,
             isSighnPlus: true,
-            itemIcon: "item_1",
+            itemIcon: 1,
             savedExample: "",
             rotate: 0
         }
@@ -60,10 +60,12 @@ let Border = React.createClass({
         const left = parseInt(e[0]);
         const right = parseInt(e[2]);
         const isSighnPlus = e[1] === "+";
+        const itemIcon = Math.floor(Math.random() * (14 - 1 + 1) + 1);
         this.setState({
             left,
             isSighnPlus,
             right,
+            itemIcon,
             savedExample: e
         });
         this._updateValue(left, right, isSighnPlus);
@@ -122,12 +124,12 @@ let Border = React.createClass({
         return (
             <div className="border">
                 <div className={"leftNumber hold-"+left}>
-                    {this._generateItems(left, itemIcon, "left", rotate)}
+                    {this._generateItems(left, ("item_"+itemIcon), "left", rotate)}
                 </div>
                 <Button button={{className:"sighn "+sighnClass, action:this._sighnPress}}/>
 
                 <div className={"rightNumber hold-"+right}>
-                    {this._generateItems(right, itemIcon, "right", rotate)}
+                    {this._generateItems(right, ("item_"+itemIcon), "right", rotate)}
                 </div>
                 <div className="question"></div>
             </div>

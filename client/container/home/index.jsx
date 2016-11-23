@@ -64,7 +64,7 @@ let Home = React.createClass({
                             {this._renderTitle(L['GAME_TITLE'])}
                         </div>
                         <AnswerPrompt prompt={0} action={this._promptClick}/>
-                        <Barmenu playSound={this.state.playSound}/>
+                        <Barmenu showInfo={true} playSound={this.state.playSound}/>
                     </div>
                 </div>
         )

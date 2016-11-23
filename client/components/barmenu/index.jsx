@@ -2,7 +2,7 @@
  * Created by dima on 24.08.16.
  */
 import React, { PropTypes } from 'react';
-import { hashHistory } from 'react-router';
+import { hashHistory, Link } from 'react-router';
 import SM from 'soundmanager2';
 import Button from '../button/index.jsx';
 import LiveLine from '../liveline/index.jsx';
@@ -106,7 +106,8 @@ let Barmenu = React.createClass({
         const rout = {
             'game': '/levels',
             'video': '/levels',
-            'levels': '/'
+            'levels': '/',
+            'info': '/'
         };
         this._playSound('button');
         if (rout[hash]) {
@@ -116,13 +117,18 @@ let Barmenu = React.createClass({
             navigator.app.exitApp();
         }
     },
+    _toInfo(){
+        this._playSound('button');
+        hashHistory.push('/info')
+    },
     render() {
         const soundClass = this.state.sound ? "soundSwitch" : "soundSwitch off";
-        const {showLives, lives} = this.props;
+        const {showLives, lives, showInfo} = this.props;
         return (
             <div className="barmenu">
                 <Button button={{className:soundClass,text:"",action:this._soundTrigger}}/>
                 {showLives ? <LiveLine count={lives}/> : null}
+                {showInfo ? <Button button={{className:"showInfo",text:"i",action:this._toInfo}}/>: null}
                 <Button button={{className:"exit",text:"",action:this._exitGame}}/>
             </div>
         )

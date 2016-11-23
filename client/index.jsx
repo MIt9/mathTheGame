@@ -11,6 +11,7 @@ import Game from './container/game/index.jsx';
 import Home from './container/home/index.jsx';
 import Levels from './container/levels/index.jsx';
 import Video from './container/video/index.jsx';
+import Info from './container/info/index.jsx';
 import configureStore from './store/configureStore'
 import LANGUAGE from './language/language.js';
 
@@ -27,6 +28,7 @@ function renderApp(){
         <Provider store={store}>
             <Router history={hashHistory}>
                 <Route path="/" component={Home}/>
+                <Route path="/info" component={Info}/>
                 <Route path="/video/:level" component={Video}/>
                 <Route path="/levels(/:status/:levelNumber)" component={Levels}/>
                 <Route path="/game/:level" component={Game}/>

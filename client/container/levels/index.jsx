@@ -48,10 +48,12 @@ let Levels = React.createClass({
     },
     _generateLevels(){
         const result = [];
+        const style = this._starSize();
         const {levelsArray, completeLevel} = this.props.levels;
         for (let i = 0; i < levelsArray.length; i++) {
             let full = i<= completeLevel? 'full animated flipInY' : 'empty';
             result.push(<Button key={"level_"+i} button={{
+                style,
                 level: i,
                 block: i>completeLevel,
                 className: "levelCloud level_"+(i+1)+" "+full,
@@ -62,8 +64,16 @@ let Levels = React.createClass({
         }
         return result;
     },
+    _starSize(){
+        const width = window.innerWidth/4;
+        return {
+            width: width+'px',
+            lineHeight: width+'px',
+            fontSize: width/2.5+'px',
+            margin: width/6+'px'
+        }
+    },
     render() {
-
         return (
                 <div className="levels">
                     <div className="wrapper">

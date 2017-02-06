@@ -3,28 +3,28 @@
  */
 export default {
     en: {
-        GAME_TITLE: "Veggie Math",
         START: "Start",
         RIGHT_ANSWER: "Right answer",
         CONGRATULATION: "Congratulation",
         PLAY: "Next level",
-        GAME_OVER: "Game over"
+        GAME_OVER: "Game over",
+        TAP: "Tap to play"
     },
     uk: {
-        GAME_TITLE: "Вегаматика",
         START: "Старт",
         RIGHT_ANSWER: "Чудово",
         CONGRATULATION: "Перемога",
         PLAY: "Грати далі",
-        GAME_OVER: "Кинець гри"
+        GAME_OVER: "Кинець гри",
+        TAP: "Натисни"
     },
     ru: {
-        GAME_TITLE: "Вегаматика",
         START: "Старт",
         RIGHT_ANSWER: "Красавчег",
         CONGRATULATION: "Победа",
         PLAY: "Играть дальше",
-        GAME_OVER: "Конец игры"
+        GAME_OVER: "Конец игры",
+        TAP: "Нажми"
     }
 
 }

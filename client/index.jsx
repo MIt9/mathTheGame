@@ -27,8 +27,8 @@ function renderApp(){
     render(
         <Provider store={store}>
             <Router history={hashHistory}>
-                <Route path="/" component={Home}/>
-                <Route path="/info" component={Info}/>
+                <Route path="/home" component={Home}/>
+                <Route path="/" component={Info}/>
                 <Route path="/video/:level" component={Video}/>
                 <Route path="/levels(/:status/:levelNumber)" component={Levels}/>
                 <Route path="/game/:level" component={Game}/>

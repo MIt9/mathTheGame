@@ -7,7 +7,6 @@ let Button = React.createClass({
     isMount:false,
     getInitialState(){
         return {
-            //нажата или ненажата кнопка
             tapped: false
         }
     },
@@ -36,10 +35,10 @@ let Button = React.createClass({
     },
 
     render() {
-        let {text, className, cssStyle} =this.props.button;
+        let {text, className, style} =this.props.button;
         className = this.state.tapped ? className + ' tapped' : className;
         return (
-            <div className={className} onClick={this._click} style={cssStyle}>{text}</div>
+            <div className={className} onClick={this._click} style={style}>{text}</div>
         )
     }
 });

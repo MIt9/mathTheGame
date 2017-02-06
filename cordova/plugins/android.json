@@ -13,16 +13,16 @@
         "cordova-plugin-globalization": {
             "PACKAGE_NAME": "ua.siniidrozd.veggiemath"
         },
-        "cordova-plugin-splashscreen": {
+        "cordova-plugin-inappbrowser": {
             "PACKAGE_NAME": "ua.siniidrozd.veggiemath"
         },
-        "cordova-plugin-whitelist": {
+        "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "ua.siniidrozd.veggiemath"
         },
         "cordova-plugin-statusbar": {
             "PACKAGE_NAME": "ua.siniidrozd.veggiemath"
         },
-        "cordova-plugin-inappbrowser": {
+        "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "ua.siniidrozd.veggiemath"
         }
     },

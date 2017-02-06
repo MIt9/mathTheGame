@@ -113,7 +113,7 @@ let Border = React.createClass({
         for (let i = 0; i < count; i++) {
             const className = 'item ' + icon + ' i' + (i + 1);
             result.push(<Button key={'item_'+i} button={
-            {className: className, side: side, action: this._itemPress, cssStyle: cssStyle}
+            {className: className, side: side, action: this._itemPress, style: cssStyle}
             }/>)
         }
         return result;

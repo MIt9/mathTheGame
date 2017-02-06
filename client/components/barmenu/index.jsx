@@ -106,8 +106,8 @@ let Barmenu = React.createClass({
         const rout = {
             'game': '/levels',
             'video': '/levels',
-            'levels': '/',
-            'info': '/'
+            'levels': '/home',
+            'info': '/home'
         };
         this._playSound('button');
         if (rout[hash]) {
@@ -117,18 +117,14 @@ let Barmenu = React.createClass({
             navigator.app.exitApp();
         }
     },
-    _toInfo(){
-        this._playSound('button');
-        hashHistory.push('/info')
-    },
+
     render() {
         const soundClass = this.state.sound ? "soundSwitch" : "soundSwitch off";
-        const {showLives, lives, showInfo} = this.props;
+        const {showLives, lives} = this.props;
         return (
             <div className="barmenu">
                 <Button button={{className:soundClass,text:"",action:this._soundTrigger}}/>
                 {showLives ? <LiveLine count={lives}/> : null}
-                {showInfo ? <Button button={{className:"showInfo",text:"i",action:this._toInfo}}/>: null}
                 <Button button={{className:"exit",text:"",action:this._exitGame}}/>
             </div>
         )
